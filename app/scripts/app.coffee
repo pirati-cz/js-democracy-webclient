@@ -37,3 +37,22 @@ app.run ($rootScope, $location, AuthenticationService) ->
     # redirect back to login
       $location.path "/login"
 
+
+# automatic redirect to login page when 401 from REST service
+app.config ($httpProvider) ->
+  logsOutUserOn401 = ["$q", "$location", ($q, $location) ->
+    success = (response) ->
+      response
+
+    error = (response) ->
+      if response.status is 401
+        # redirect them back to login page
+        $location.path "/login"
+        $q.reject response
+      else
+        $q.reject response
+
+    (promise) ->
+      promise.then success, error
+  ]
+  $httpProvider.responseInterceptors.push logsOutUserOn401
