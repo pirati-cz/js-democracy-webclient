@@ -1,3 +1,8 @@
+
+
+<div class="slide-animate" ng-include src="'views/mixins/navbar.html'"></div>
+
+
 <p class="info" ng-hide="{{cfg.message}}" ng-model="cfg.message"></p>
 
 <table class="table table-stripped">
@@ -6,12 +11,13 @@
       <h5>{{voting.name}}</h5>
       <p class="small">{{voting.desc}}</p>
       <form name="voteform" class="form-horizontal" role="form" ng-show="cfg.formForVoting == voting">
-        <div class="radio" ng-repeat="opt in voting.options">
-          <label class="checkbox-inline">
-          <input type="radio" name="voting{{voting.id}}" ng-model="voting.voted" value="{{opt.id}}">
+
+        <div ng-repeat="opt in voting.options">
+          <label>
+            <input type="radio" name="voting{{voting.id}}" ng-model="voting.voted" value="{{opt.id}}">
             {{opt.name}}
             <a class="btn btn-small" ng-show="{{opt.url}}" href="{{opt.url}}">
-              <i class="icon icon-share"></i>
+              <span class="glyphicon glyphicon-share"></span>
             </a>
             <p ng-show="{{opt.desc}}">{{opt.desc}}</p>
           </label>
@@ -24,10 +30,10 @@
     </td>
     <td>
       <a class="btn btn-small" href="{{voting.url}}">
-        <i class="icon icon-share"></i> detaily
+        <span class="glyphicon glyphicon-share"></span> detaily
       </a>
       <a class="btn btn-primary" ng-click="cfg.formForVoting = voting;">
-        <i class="icon-white icon-comment"></i> Vote!
+        <span class="glyphicon glyphicon-comment"></span> Vote!
       </a>
     </td>
   </tr>

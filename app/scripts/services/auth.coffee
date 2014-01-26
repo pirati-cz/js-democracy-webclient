@@ -8,6 +8,10 @@ app.factory "AuthenticationService", ($http, SessionService) ->
     SessionService.currentUser = user
     done()
 
+  logout: (done) ->
+    SessionService.currentUser = ''
+    done()
+
   isLoggedIn: ->
     SessionService.currentUser isnt null
 
