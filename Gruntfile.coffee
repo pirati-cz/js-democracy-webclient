@@ -268,12 +268,12 @@ module.exports = (grunt) ->
 
     karma:
       unit:
-        configFile: "karma.conf.js"
+        configFile: "test/karma.conf.js"
         singleRun: true
 
     cdnify:
       dist:
-        html: ["<%= yeoman.dist %>/*.html"]
+        html: ["<%= ye/oman.dist %>/*.html"]
 
     ngmin:
       dist:
