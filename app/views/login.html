@@ -1,0 +1,7 @@
+<form class="form-signin" name="credentials" role="form">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <input type="text" class="form-control" placeholder="Email address" required autofocus ng-model="credentials.uname">
+  <input type="password" class="form-control" placeholder="Password" required ng-model="credentials.passwd">
+
+  <button class="btn btn-lg btn-primary btn-block" ng-click="loginUser(credentials)">Sign in</button>
+</form>
