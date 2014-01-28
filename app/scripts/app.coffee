@@ -2,7 +2,8 @@
 
 app = angular.module('jswcApp', [
   'jswcControllers',
-  'jswcServices'
+  'jswcServices',
+  'ui.bootstrap.datetimepicker'
 ])
 
 app.config ($routeProvider) ->
@@ -10,6 +11,10 @@ app.config ($routeProvider) ->
     .when '/',
       templateUrl: 'views/index.html'
       controller: 'IndexCtrl'
+      
+    .when '/create',
+      templateUrl: 'views/create.html'
+      controller: 'CreateController'
 
     .when '/login',
       templateUrl: 'views/login.html'
