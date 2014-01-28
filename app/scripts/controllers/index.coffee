@@ -13,7 +13,8 @@ angular.module('jswcControllers', [])
       $scope.cfg.message = 'voting in progress'
       api.Vote.save {}, voting.voted, ->
         $scope.cfg.message = false
-      , ->
+      , (e) ->
         $scope.cfg.message = false
+        alert(e.data)
       $scope.cfg.formForVoting = ''
     
