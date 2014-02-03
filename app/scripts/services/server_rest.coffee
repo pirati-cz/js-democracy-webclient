@@ -2,14 +2,14 @@
 
 angular.module('jswcServices', ['ngResource']).factory 'api', ($resource) ->
 
-  url = '/'
+  url = ""
 
   api =
 
     # voting API
-    Voting: $resource("#{url}votings/", {}, {})
+    Voting: $resource("#{url}voting", {}, {})
 
     # vote API
-    Vote: $resource("#{url}vote", {}, {})
+    Vote: $resource("#{url}vote/:votingId", {}, {})
 
 
