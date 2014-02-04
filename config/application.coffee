@@ -18,7 +18,7 @@ module.exports = (lineman) ->
     url: '/'
 
   lineman.config.application.pages.dist.context.rest =
-    url: process.env.VOTING_API_URL || '/'
+    url: process.env.VOTING_API_URL || 'http://js-democracy-server.herokuapp.com/'
 
   # copy bootstrap fonts
   lineman.config.application.copy.dev.files.push
