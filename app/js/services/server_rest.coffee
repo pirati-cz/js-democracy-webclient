@@ -2,7 +2,7 @@
 
 mod = angular.module('jswcServices', ['ngResource'])
 
-mod.factory 'api', ($resource, myconfig) ->
+mod.factory 'api', ['$resource', 'myconfig', ($resource, myconfig) ->
 
   url = myconfig.votingAPIUrl
 
@@ -13,5 +13,4 @@ mod.factory 'api', ($resource, myconfig) ->
 
     # vote API
     Vote: $resource("#{url}vote/:votingId", {}, {})
-
-
+  ]
