@@ -2,8 +2,8 @@
   "name": "jsDemocracyWebclient",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "latest",
-    "angular-bootstrap-datetimepicker": "latest",
+    "angular": "~1.2.10",
+    "angular-bootstrap-datetimepicker": "~0.2.1",
     "json3": "~3.2.4",
     "jquery": "~1.9.1",
     "bootstrap-sass": "~3.*.*",
