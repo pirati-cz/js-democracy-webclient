@@ -1,8 +1,10 @@
 'use strict';
 
-angular.module('jswcServices', ['ngResource']).factory 'api', ($resource) ->
+mod = angular.module('jswcServices', ['ngResource'])
 
-  url = ""
+mod.factory 'api', ($resource, myconfig) ->
+
+  url = myconfig.votingAPIUrl
 
   api =
 

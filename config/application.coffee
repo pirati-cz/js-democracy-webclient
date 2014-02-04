@@ -13,7 +13,12 @@ Exports a function which returns an object that overrides the default &
  *   $ lineman config concat.js #=> to see the JS config for the concat task.
 ###
 module.exports = (lineman) ->
-  # Override application configuration here. Common examples follow in the comments.
+
+  lineman.config.application.pages.dev.context.rest =
+    url: '/'
+
+  lineman.config.application.pages.dist.context.rest =
+    url: process.env.VOTING_API_URL || '/'
 
   # API Proxying
   #
