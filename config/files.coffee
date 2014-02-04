@@ -52,10 +52,3 @@ module.exports = (lineman) ->
       "vendor/components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"
     ]
 
-  copy:
-    files: [
-      expand: true
-      cwd: "vendor/components/bootstrap-sass/fonts"
-      src: "**"
-      dest: 'generated/fonts'
-    ]

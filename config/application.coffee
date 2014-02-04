@@ -20,6 +20,19 @@ module.exports = (lineman) ->
   lineman.config.application.pages.dist.context.rest =
     url: process.env.VOTING_API_URL || '/'
 
+  # copy bootstrap fonts
+  lineman.config.application.copy.dev.files.push
+    expand: true
+    cwd: "vendor/components/bootstrap-sass/fonts"
+    src: "**"
+    dest: 'generated/fonts'
+
+  lineman.config.application.copy.dist.files.push
+    expand: true
+    cwd: "vendor/components/bootstrap-sass/fonts"
+    src: "**"
+    dest: 'dist/fonts'
+
   # API Proxying
   #
   # During development, you'll likely want to make XHR (AJAX) requests to an API on the same
