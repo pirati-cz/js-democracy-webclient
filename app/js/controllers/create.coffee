@@ -1,6 +1,6 @@
 app = angular.module('jswcControllers')
 
-app.controller "CreateController", ($scope, $location, api) ->
+app.controller "CreateController", ['$scope', '$location', 'api', ($scope, $location, api) ->
 
   now = new Date()
 
@@ -28,3 +28,4 @@ app.controller "CreateController", ($scope, $location, api) ->
       name: ''
       desc: ''
       url: ''
+]

@@ -12,7 +12,7 @@
       <p class="small">{{voting.desc}}</p>
       <form name="voteform" class="form-horizontal" role="form" ng-show="cfg.formForVoting == voting">
 
-        <div ng-repeat="opt in voting.options">
+        <div ng-repeat="opt in voting.opts">
           <label>
             <input type="radio" name="voting{{voting.id}}" ng-model="voting.voted" value="{{opt.id}}">
             {{opt.name}}
